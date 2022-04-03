@@ -1,18 +1,29 @@
-
+let hasBlackJack=false;
+let isAlive=true;
+let message="";
+let getCardElement=document.getElementById("cardElement");
+let getSumElement=document.getElementById("sumElement");
+let getMessageElement=document.getElementById("message-el");
+function StartGame(){
+    getCardElement.textContent="Cards:";
+    getSumElement.textContent="Sum:";
 let x=Math.floor((Math.random()*10)+2);
 let y=Math.floor((Math.random()*10)+2);
 let sum=x+y;
-console.log(x +" |"+ y+"sum:"+sum);
-let hasBlackJack=false;
 
+getCardElement.textContent+=x+" and "+y;
+getSumElement.textContent+=sum;
 if (sum<=20){
-    console.log("Do you want to draw a new card?")
+    message=("Do you want to draw a new card?")
 }else if(sum===21){
-    console.log("wohoo BLACK JACK")
+    message=("wohoo BLACK JACK")
     hasBlackJack=true;
 }
 else{
-    console.log("Out of the game!")
+    message=("Out of the game!")
+    isAlive=false;
 }
+getMessageElement.textContent=message
 // Cashout:
-console.log(hasBlackJack);
+console.log(sum);
+}
