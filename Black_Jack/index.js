@@ -9,7 +9,10 @@ if (sum<=20){
     console.log("Do you want to draw a new card?")
 }else if(sum===21){
     console.log("wohoo BLACK JACK")
+    hasBlackJack=true;
 }
 else{
     console.log("Out of the game!")
 }
+// Cashout:
+console.log(hasBlackJack);
