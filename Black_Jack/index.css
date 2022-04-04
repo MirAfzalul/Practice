@@ -7,6 +7,8 @@ body {
     text-align: center;
     font-weight: bold;
     color: white;
+    
+    
 }
 
 h1 {
@@ -28,4 +30,15 @@ h1 {
     font-weight: bold;
     padding: 5px;
     border-radius:2px ;
+}
+#newCardBtn{
+    
+    background-color: goldenrod;
+    border: none;
+    color: #016f32;
+    width: 150px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius:2px ;
+
 }
