@@ -22,23 +22,15 @@ h1 {
     font-weight: bold;
     font-style: italic;
 }
-#startBtn{
-    background-color: goldenrod;
-    border: none;
-    color: #016f32;
-    width: 150px;
-    font-weight: bold;
-    padding: 5px;
-    border-radius:2px ;
-}
-#newCardBtn{
-    
-    background-color: goldenrod;
-    border: none;
-    color: #016f32;
-    width: 150px;
-    font-weight: bold;
-    padding: 5px;
-    border-radius:2px ;
 
+button{
+    background-color: goldenrod;
+    border: none;
+    color: #016f32;
+    width: 150px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius:2px ;
+    margin-bottom: 4px;
 }
