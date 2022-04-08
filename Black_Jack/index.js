@@ -4,37 +4,53 @@ let message="";
 let getCardElement=document.getElementById("cardElement");
 let getSumElement=document.getElementById("sumElement");
 let getMessageElement=document.getElementById("message-el");
-let getNewCardElement=document.querySelector("#newCardBtn");
-
-let x=Math.floor((Math.random()*10)+2);
-let y=Math.floor((Math.random()*10)+2);
-let z=Math.floor((Math.random()*10)+2);
-let cards=[x,y,z];
-let sum=x+y;
+let getNewCardBtnElement=document.querySelector("#newCardBtn");
+let cards=[];
+let sum=0;
 function startGame(){
-    renderGame();
+    let x=Math.floor((Math.random()*10)+2);
+    let y=Math.floor((Math.random()*10)+2);
+    cards.push(x,y);
+    sum=x+y;
+    getCardElement.textContent="Cards: ";
+    renderGame(sum);
+    //cards.pop(x);
+    //cards.pop(y);
 }
-function renderGame(){
-getCardElement.textContent="Cards: "+cards[0]+" "+cards[1];
-getSumElement.textContent="Sum: "+sum;
-if (sum<=20){
+function renderGame(s){
+    for(let i=0;i<cards.length;i++){
+        getCardElement.textContent+=" "+cards[i]+" ";
+    }
+//getCardElement.textContent="Cards: "+cards[0]+" "+cards[1];
+getSumElement.textContent="Sum: "+s;
+if (s<=20){
     message=("Do you want to draw a new card?")
-}else if(sum===21){
+}else if(s===21){
     message=("wohoo BLACK JACK")
     hasBlackJack=true;
+    
 }
 else{
     message=("Out of the game!")
     isAlive=false;
+    //getNewCardBtnElement.remove();
+
 }
 getMessageElement.textContent=message
 // Cashout:
 console.log(sum);
+
+console.log(cards);
 }
 
 function DrawNewCard(){
+    let z=Math.floor((Math.random()*10)+2);
     sum+=z;
     //getCardElement.textContent="Cards:"+x+"and"+y+"and"+z;
     //getSumElement.textContent="Sum:"+sum;
-    renderGame();
+    cards.push(z);
+    getCardElement.textContent="Cards: ";
+    console.log(cards);
+    renderGame(sum);
+    cards.pop(z);
 }
