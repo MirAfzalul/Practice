@@ -6,7 +6,7 @@ let getSumElement=document.getElementById("sumElement");
 let getMessageElement=document.getElementById("message-el");
 let getNewCardBtnElement=document.querySelector("#newCardBtn");
 let cards=[];
-let x,y,zsum=0;
+let x,y,zsum=0,countRound=0;
 let player={
         name:"Asif",
         chips:"$250"
@@ -24,6 +24,8 @@ function startGame(){
     renderGame();
   //  cards.pop(x);
     //cards.pop(y);
+    countRound++;
+    console.log(countRound);
 }
 function renderGame(){
     for(let i=0;i<cards.length;i++){
@@ -33,6 +35,7 @@ function renderGame(){
 getSumElement.textContent="Sum: "+sum;
 if (sum<=20){
     message=("Do you want to draw a new card?")
+    //document.getElementById("startBtn").textContent="Restart";
 }else if(sum===21){
     message=("wohoo BLACK JACK")
     hasBlackJack=true;
